@@ -1,10 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('de') {
       steps {
-        withKubeCredentials() {
-          sh 'kubect get pod -n cale'
+        withKubeConfig(credentialsId: '111', serverUrl: 'https://111') {
+          sh 'echo "a"'
         }
 
       }
